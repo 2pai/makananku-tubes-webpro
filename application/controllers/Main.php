@@ -15,4 +15,10 @@ class Main extends CI_Controller {
         $this->load->view('Dashboard/footer');
         # code...
     }
+    public function lihatMakanan()
+    {
+        $this->load->view('Dashboard/head');
+        $this->load->view('Dashboard/lihatmakanan');
+        $this->load->view('Dashboard/footer');    
+    }
 }
