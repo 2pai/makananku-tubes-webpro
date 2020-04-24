@@ -20,10 +20,10 @@ class Admin extends CI_Controller {
         $this->load->view('Admin/main');
         $this->load->view('Admin/footer');
     }
-    public function manageAdmin()
+    public function pesanan()
     {
         $this->load->view('Admin/head');
-        $this->load->view('Admin/main');
+        $this->load->view('Admin/pesanan');
         $this->load->view('Admin/footer');
     }
 }
