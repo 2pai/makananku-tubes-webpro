@@ -37,5 +37,8 @@ class AdminM extends CI_Model{
         $this->db->where('id_pesanan', $id);
         $this->db->delete('pesanan');
     }
-
+    public function inputPesanan($data)
+    {
+        $this->db->insert('pesanan',$data);
+    }
 }?>

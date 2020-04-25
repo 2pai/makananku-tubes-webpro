@@ -10,11 +10,26 @@ class Main extends CI_Controller {
         # code...
     }
     public function pesanMakanan(){
+        $data = [
+            'listMakanan' => $this->AdminM->listMakanan()
+        ];
         $this->load->view('Dashboard/head');
-        $this->load->view('Dashboard/pesanmakanan');
+        $this->load->view('Dashboard/pesanmakanan',$data);
         $this->load->view('Dashboard/footer');
         # code...
     }
+    public function pesanMakananP(){
+        $data = [
+            'nomor_pasien' => 1,
+            'nomor_makanan' => $this->input->post('id_makanan'),
+            'tanggal' => $this->input->post('tanggal'),
+            'deskripsi' => $this->input->post('deskripsi')
+        ];
+        $this->AdminM->inputPesanan($data);
+        redirect('Main/pesanMakanan');
+
+    }
+    
     public function lihatMakanan()
     {
         $this->load->view('Dashboard/head');
