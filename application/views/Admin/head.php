@@ -23,13 +23,13 @@
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Pasien</a>
+            <a class="nav-link" href="<?= site_url('Admin/pasien/')?>">Pasien</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Makanan</a>
+            <a class="nav-link" href="<?= site_url('Admin/makanan/')?>">Makanan</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Pesanan</a>
+            <a class="nav-link" href="<?= site_url('Admin/pesanan/')?>">Pesanan</a>
         </li>
         </ul>
         <ul class="navbar-nav">

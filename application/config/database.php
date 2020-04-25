@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost', #ex localhost
-	'username' => 'root', #ex root
+	'hostname' => 'localhost',
+	'username' => 'root', 
 	'password' => '',
-	'database' => 'mod9_jurnal', #ex profile
+	'database' => 'makanan-rs',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
