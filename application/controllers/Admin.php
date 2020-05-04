@@ -21,14 +21,14 @@ class Admin extends CI_Controller {
     {
         $data['pasien'] = $this->PasienModel->getAllPasien();
         $this->load->view('Admin/head');
-        $this->load->view('Admin/pasien');
+        $this->load->view('Admin/pasien', $data);
         $this->load->view('Admin/footer');
     }
     public function makanan()
     {
         $data['makanan'] = $this->MakananModel->get_all()->result();
         $this->load->view('Admin/head');
-        $this->load->view('Admin/makanan');
+        $this->load->view('Admin/makanan', $data);
         $this->load->view('Admin/footer');
     }
     public function pesanan()
