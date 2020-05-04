@@ -8,7 +8,7 @@
 	</head>
 	
 	<body>
-		<form action="<?= site_url('login/login') ?>" method="post">
+		<form action="<?= site_url('Login/login') ?>" method="post">
 			<h2>Login Makananku</h2>
 			<?php if(isset($error_message)) { ?>
 			<div class="alert alert-danger" role="alert">

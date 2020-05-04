@@ -19,14 +19,16 @@ class Admin extends CI_Controller {
     }
     public function pasien()
     {
-        $data['pasien'] = $this->PasienModel->getAllPasien();
+        $data = [
+            'pasien' => $this->PasienModel->getAllPasien()
+        ]; 
         $this->load->view('Admin/head');
         $this->load->view('Admin/pasien', $data);
         $this->load->view('Admin/footer');
     }
     public function makanan()
     {
-        $data['makanan'] = $this->MakananModel->get_all()->result();
+        $data['makanan'] = $this->MakananModel->get_all();
         $this->load->view('Admin/head');
         $this->load->view('Admin/makanan', $data);
         $this->load->view('Admin/footer');
@@ -43,8 +45,8 @@ class Admin extends CI_Controller {
 
     public function addPasien()
     {
-            $this->PasienModel->registPasien();
-            redirect('Admin/pasien');
+        $this->PasienModel->registPasien();
+        redirect('Admin/pasien');
     }
 
     public function hapusPasien($id)

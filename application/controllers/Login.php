@@ -21,7 +21,7 @@ class Login extends CI_Controller {
 		#if true set session and fill it with the inputted username and redirect to '/profile'
 		if($this->TheModel->login($data)){
 			$this->session->set_userdata('username',$data['username']);
-			redirect('/profile');
+			redirect('Main/');
 		}else{
 			$this->load->view('login',['error_message' => 'Gagal Login']);
 		}

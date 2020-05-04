@@ -4,9 +4,11 @@ class MakananModel extends CI_Model{
 	function __construct() {
 		parent::__construct();
 	}
+
 	public function get_all(){
 		return $this->db->get('makanan')->result();
 	}
+	
 	public function get_makanan($id_makanan){
 		$this->db->where('id_makanan', $id_makanan);
 		return $this->db->get('makanan')->row();

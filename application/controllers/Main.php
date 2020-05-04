@@ -9,6 +9,7 @@ class Main extends CI_Controller {
         $this->load->view('Dashboard/footer');
         # code...
     }
+
     public function pesanMakanan(){
         $data = [
             'listMakanan' => $this->AdminM->listMakanan()
@@ -18,6 +19,7 @@ class Main extends CI_Controller {
         $this->load->view('Dashboard/footer');
         # code...
     }
+    
     public function pesanMakananP(){
         $data = [
             'nomor_pasien' => 1,
