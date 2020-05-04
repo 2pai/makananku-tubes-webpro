@@ -4,8 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Main extends CI_Controller {
     public function index()
     {
+        $this->username = $this->session->username;
+        $data['username'] = $this->username;
         $this->load->view('Dashboard/head');
-        $this->load->view('Dashboard/main');
+        $this->load->view('Dashboard/main', $data);
         $this->load->view('Dashboard/footer');
         # code...
     }
