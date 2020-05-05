@@ -6,7 +6,7 @@
   <div class="card-body">
     <button class="btn btn-primary" data-toggle="modal" data-target="#modalAdd">Add</button>
 
-    <table class="table">
+    <table class="table" id="table">
     <thead>
         <tr>
             <th>Nama Makanan</th>
@@ -93,7 +93,7 @@
         </button>
       </div>
       <div class="modal-body">
-      <form action="<?= site_url('Admin/ubah_makanan').$mkn['id_makanan']?>" method="post">
+      <form action="<?= site_url('Admin/ubah_makanan/').$mkn['id_makanan']?>" method="post">
         <div class="form-group">
             <label>Nama Makanan</label>
             <input type="text" name="nama_makanan" class="form-control" value="<?php echo $mkn['nama_makanan']; ?>">

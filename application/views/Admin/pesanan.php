@@ -4,7 +4,7 @@
     Pesanan
   </div>
   <div class="card-body">
-    <table class="table">
+    <table class="table" id="table">
     <thead>
         <tr>
             <th>Tanggal</th>
