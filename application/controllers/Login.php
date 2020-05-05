@@ -24,6 +24,7 @@ class Login extends CI_Controller {
 			session_start();
 
 			$user = $this->TheModel->get_profile($data['nomor_pasien']);
+			$this->session->nomor_pasien = $data['nomor_pasien'];
 			$this->session->username = $user['nama_pasien'];
 			redirect('Main/');
 		} else {

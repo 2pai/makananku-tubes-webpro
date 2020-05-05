@@ -87,6 +87,15 @@ class Admin extends CI_Controller {
         $this->load->view('Admin/editpesanan',$data);
         $this->load->view('Admin/footer');
     }
+    public function viewpesanan($id)
+    {
+        $data = [
+            'pasien' => $this->AdminM->listPesananPasien($id)
+        ];
+        $this->load->view('Admin/head');
+        $this->load->view('Admin/viewpesanan',$data);
+        $this->load->view('Admin/footer');
+    }
     public function editpesananP($id){
         $this->AdminM->updatePesanan($id,$this->input->post('id_makanan'));
         redirect('Admin/pesanan');

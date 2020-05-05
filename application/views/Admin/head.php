@@ -7,6 +7,7 @@
 
     <!-- Bootstrap CSS -->
 	<link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/bootstrap.min.css'); ?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/DataTables/datatables.min.css'); ?>"/>
 
     <title>Makananku!</title>
   </head>

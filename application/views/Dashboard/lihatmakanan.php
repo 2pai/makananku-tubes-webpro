@@ -9,12 +9,12 @@
   <?php foreach ($listMakanan as $makanan) { ?>
   <div class="col-md-4">
     <div class="card" style="width: 18rem;">
-      <img src="<?= base_url('assets/uploads/m-padang.jpg')?>" class="card-img-top" >
+    <img src="<?= base_url('assets/uploads/').$makanan['foto']?>" class="card-img-top" >
       <div class="card-header">
-      <?= $makanan->nama_makanan ?>
+      <?= $makanan['nama_makanan'] ?>
       </div>
       <div class="card-body">
-        <p class="card-text">Deskripsi : (<?= $makanan->deskripsi ?>)<br>Komposisi (<?= $makanan->komposisi ?>)<br> nilai gizi : (<?= $makanan->komposisi ?>)<br>Ketersediaan : <?= $makanan->ketersediaan ?><br></p>
+      <p class="card-text">Deskripsi : (<?= $makanan['deskripsi'] ?>)<br>Komposisi (<?= $makanan['komposisi'] ?>)<br> nilai gizi : (<?= $makanan['komposisi'] ?>)<br>Ketersediaan : <?= $makanan['ketersediaan'] ?><br></p>
       </div>
     </div>
   </div>

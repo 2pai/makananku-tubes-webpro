@@ -6,7 +6,7 @@
   <div class="card-body">
     <button class="btn btn-primary" data-toggle="modal" data-target="#modalAdd">Add</button>
 
-    <table class="table">
+    <table class="table" id="table">
     <thead>
         <tr>
             <th>Nama Makanan</th>
