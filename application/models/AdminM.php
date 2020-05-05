@@ -20,11 +20,10 @@ class AdminM extends CI_Model{
     public function listPesananPasien($id)
     {
         $this->db->select('*');
-        $this->db->select('pesanan.deskripsi as pesanan_deskripsi');
         $this->db->from('pesanan');
         $this->db->join('pasien', 'pesanan.nomor_pasien = pasien.nomor_pasien');
         $this->db->join('makanan', 'pesanan.nomor_makanan = makanan.id_makanan');
-        $this->db->where('pesanan.id_pesanan',$id);
+        $this->db->where('pasien.nomor_pasien',$id);
         return $this->db->get()->row_array();
     }
     public function updatePesanan($id,$id_makanan)

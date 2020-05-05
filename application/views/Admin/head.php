@@ -7,8 +7,7 @@
 
     <!-- Bootstrap CSS -->
 	<link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/bootstrap.min.css'); ?>"/>
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/DataTables/datatables.min.css'); ?>"/>
- 
+
     <title>Makananku!</title>
   </head>
   <body>
@@ -35,7 +34,7 @@
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item">
-            <a href="" class="nav-link">Logout</a>
+            <a href="<?php echo base_url('Login/logout') ?>" class="nav-link">Logout</a>
             </li>
         </ul>
     </div>

@@ -31,7 +31,7 @@ class Main extends CI_Controller {
     
     public function pesanMakananP(){
         $data = [
-            'nomor_pasien' => $this->session->nomor_pasien,
+            'nomor_pasien' => 1,
             'nomor_makanan' => $this->input->post('id_makanan'),
             'tanggal' => $this->input->post('tanggal'),
             'deskripsi' => $this->input->post('deskripsi')

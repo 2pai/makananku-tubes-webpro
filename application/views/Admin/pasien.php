@@ -6,7 +6,7 @@
   <div class="card-body">
     <button class="btn btn-primary" data-toggle="modal" data-target="#modalAdd">Add</button>
 
-    <table class="table" id="table">
+    <table class="table">
     <thead>
         <tr>
             <th>Nama Pasien</th>
@@ -28,7 +28,7 @@
             <td><?= $psn['kamar']; ?></td>
             <td>
                 <button class="btn btn-warning" data-toggle="modal" data-target="#modalUpdate">Edit</button>
-                <a href= "<?= site_url('Admin/hapusPasien/').$psn['nomor_pasien'] ?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin menghapus data ini?');" ?> Delete </a>
+                <a href= "<?= base_url('Admin/hapusPasien/').$psn['nomor_pasien'] ?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin menghapus data ini?');" ?> Delete </a>
             </td>
         </tr>
         <?php endforeach ?>
@@ -104,10 +104,11 @@
         </button>
       </div>
       <div class="modal-body">
-      <form action="<?= site_url('Admin/updatePasien').$psn['nomor_pasien']?>" method="post">
+      <form action="<?= base_url('Admin/updatePasien/').$psn['nomor_pasien'] ?>" method="post">
+        <input type="hidden" name="nomor_pasienu" value="<?= $psn['nomor_pasien'] ?>">
         <div class="form-group">
             <label>Nama Pasien</label>
-            <input type="text" name="nama_pasienu" class="form-control">
+            <input type="text" name="nama_pasienu" class="form-control" value="<?= $psn['nama_pasien']; ?>">
         </div>
         <div class="form-group">
             <label>Password</label>
@@ -115,7 +116,7 @@
         </div>
         <div class="form-group">
             <label>Umur</label>
-            <input type="number" name="umuru" class="form-control">
+            <input type="number" name="umuru" class="form-control" value="<?= $psn['umur']; ?>">
         </div>
         <div class="form-group">
             <label>Jenis Kelamin</label>
@@ -126,15 +127,15 @@
         </div>
         <div class="form-group">
             <label>Penyakit</label>
-            <input type="text" name="penyakitu" class="form-control">
+            <input type="text" name="penyakitu" class="form-control" value="<?= $psn['penyakit']; ?>">
         </div>
         <div class="form-group">
             <label>Alergi</label>
-            <input type="text" name="alergiu" class="form-control">
+            <input type="text" name="alergiu" class="form-control" value="<?= $psn['alergi']; ?>">
         </div>
         <div class="form-group">
             <label>Kamar</label>
-            <input type="number" name="kamaru" class="form-control">
+            <input type="number" name="kamaru" class="form-control" value="<?= $psn['kamar']; ?>">
         </div>
       </div>
       <div class="modal-footer">

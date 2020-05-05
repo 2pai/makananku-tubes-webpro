@@ -14,6 +14,7 @@ class MakananModel extends CI_Model{
 		$this->db->where('id_makanan', $id_makanan);
 		return $this->db->get('makanan')->row();
 	}
+
 	public function input_makanan(){
 		$data = array(
 			'nama_makanan' => $this->input->post('nama_makanan'),
@@ -25,6 +26,7 @@ class MakananModel extends CI_Model{
 		);
 		$this->db->insert('makanan', $data);
 	}
+
 	public function edit_makanan($id_makanan){
 		$data = array(
 			'nama_makanan' => $this->input->post('nama_makanan'),
@@ -37,6 +39,7 @@ class MakananModel extends CI_Model{
 		$this->db->where('id_makanan', $id_makanan);
 		$this->db->update('makanan', $data);
 	}
+	
 	public function delete_makanan($id_makanan){
 		$this->db->where('id_makanan', $id_makanan);
 		return $this->db->delete('makanan');

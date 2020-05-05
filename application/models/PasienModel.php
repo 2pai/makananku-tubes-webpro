@@ -54,7 +54,7 @@ class PasienModel extends CI_Model{
         ];
 
         try{
-            $this->db->where('nomor_pasien', $this->input->post('nomor_pasien'))->update('pasien', $data);
+            $this->db->where('nomor_pasien', $this->input->post('nomor_pasienu'))->update('pasien', $data);
             return [
                 'success' => true,
                 'message' => "Pasien Successfully Updated."
@@ -69,7 +69,7 @@ class PasienModel extends CI_Model{
 
     public function deletePasien($id){
         try {
-            $this->db->where('nomor_pasien', $this->input->post('nomor_pasien'))->delete('pasien');
+            $this->db->delete('pasien',['nomor_pasien' => $id]);
             return [
                 'success' => true,
                 'message' => 'Pasien Sucessfully Deleted.'

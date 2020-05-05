@@ -4,7 +4,7 @@
     Pesanan
   </div>
   <div class="card-body">
-    <table class="table" id="table">
+    <table class="table">
     <thead>
         <tr>
             <th>Tanggal</th>
@@ -26,7 +26,6 @@
             <td><?= $pesanan['penyakit']?></td>
             <td><?= $pesanan['alergi']?></td>
             <td>
-                <a class="btn btn-primary"href="<?= site_url('Admin/viewpesanan/').$pesanan['id_pesanan'] ?>">View</a>
                 <a class="btn btn-warning" href="<?= site_url('Admin/editpesanan/').$pesanan['id_pesanan'] ?>">Edit</a>
                 <a class="btn btn-danger" href="<?= site_url('Admin/deletePesanan/').$pesanan['id_pesanan'] ?>" onclick="return confirm('Are you sure?')">Delete</a>
             </td>

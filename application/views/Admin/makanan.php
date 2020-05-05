@@ -6,7 +6,7 @@
   <div class="card-body">
     <button class="btn btn-primary" data-toggle="modal" data-target="#modalAdd">Add</button>
 
-    <table class="table" id="table">
+    <table class="table">
     <thead>
         <tr>
             <th>Nama Makanan</th>
@@ -23,7 +23,7 @@
             <td><?= $mkn['ketersediaan']; ?></td>
             <td><?= $mkn['komposisi']; ?></td>
             <td>
-                <button class="btn btn-primary btn-edit" data-toggle="modal" data-target="#modalUpdate">Edit</button>
+                <button class="btn btn-warning btn-edit" data-toggle="modal" data-target="#modalUpdate">Edit</button>
                 <button class="btn btn-danger btn-delete" data-toggle="modal" data-target="#deleteModal">Delete</button>
             </td>
         </tr>
@@ -131,7 +131,7 @@
 
 <!-- Modal Delete Product-->
 
-    <form action="<?= site_url('Admin/hapus_makanan').$mkn['id_makanan']?>" method="post">
+    <form action="<?= site_url('Admin/hapus_makanan/').$mkn['id_makanan']?>" method="post">
         <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
