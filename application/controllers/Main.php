@@ -2,6 +2,13 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Main extends CI_Controller {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('PasienModel');
+        $this->load->model('MakananModel');
+    }
+
     public function index()
     {
         $this->load->view('Dashboard/head');
@@ -32,8 +39,11 @@ class Main extends CI_Controller {
     
     public function lihatMakanan()
     {
+        $data = [
+            'listMakanan' => $this->MakananModel->get_all()
+        ];
         $this->load->view('Dashboard/head');
-        $this->load->view('Dashboard/lihatmakanan');
+        $this->load->view('Dashboard/lihatmakanan',$data);
         $this->load->view('Dashboard/footer');    
     }
 }

@@ -26,7 +26,7 @@ class Admin extends CI_Controller {
     }
     public function makanan()
     {
-        $data['makanan'] = $this->MakananModel->get_all()->result();
+        $data['makanan'] = $this->MakananModel->get_all();
         $this->load->view('Admin/head');
         $this->load->view('Admin/makanan');
         $this->load->view('Admin/footer');
