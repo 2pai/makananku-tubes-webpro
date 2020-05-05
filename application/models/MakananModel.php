@@ -6,7 +6,8 @@ class MakananModel extends CI_Model{
 	}
 
 	public function get_all(){
-		return $this->db->get('makanan')->result();
+		$query = $this->db->get('makanan');
+		return $query->result_array();
 	}
 	
 	public function get_makanan($id_makanan){
