@@ -25,6 +25,7 @@ class Login extends CI_Controller {
 			//$this->session->set_userdata('username',$data['nama_pasien']);
 			$user = $this->TheModel->get_profile($data['nomor_pasien']);
 			$this->session->username = $user['nama_pasien'];
+			$this->session->nomor_pasien = $data['nomor_pasien'];
 			redirect('Main/');
 		} else {
 			$this->load->view('login',['error_message' => 'Gagal Login']);

@@ -9,7 +9,7 @@
   <?php foreach ($listMakanan as $makanan) { ?>
   <div class="col-md-4">
     <div class="card" style="width: 18rem;">
-      <img src="<?= base_url('assets/uploads/m-padang.jpg')?>" class="card-img-top" >
+      <img src="<?= base_url('assets/uploads/').$makanan['foto']?>" class="card-img-top" >
       <div class="card-header">
       <?= $makanan['nama_makanan'] ?>
       </div>
