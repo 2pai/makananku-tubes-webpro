@@ -19,16 +19,20 @@ class Admin extends CI_Controller {
     }
     public function pasien()
     {
-        $data['pasien'] = $this->PasienModel->getAllPasien();
+        $data = [
+            'pasien' => $this->PasienModel->getAllPasien()
+        ]; 
         $this->load->view('Admin/head');
-        $this->load->view('Admin/pasien');
+        $this->load->view('Admin/pasien', $data);
         $this->load->view('Admin/footer');
     }
     public function makanan()
     {
-        $data['makanan'] = $this->MakananModel->get_all();
+        $data = [
+            'makanan' => $this->MakananModel->get_all()
+        ];
         $this->load->view('Admin/head');
-        $this->load->view('Admin/makanan');
+        $this->load->view('Admin/makanan', $data);
         $this->load->view('Admin/footer');
     }
     public function pesanan()
@@ -43,8 +47,8 @@ class Admin extends CI_Controller {
 
     public function addPasien()
     {
-            $this->PasienModel->registPasien();
-            redirect('Admin/pasien');
+        $this->PasienModel->registPasien();
+        redirect('Admin/pasien');
     }
 
     public function hapusPasien($id)
@@ -61,28 +65,16 @@ class Admin extends CI_Controller {
     }
 
     public function tambah_makanan(){
-        $cek = $this->MakananModel->input_makanan($data);
-        if ($cek) $this->session->set_flashdata('info', 'Makanan berhasil ditambahkan');
-        else $this->session->set_flashdata('info', 'Makanan gagal ditambahkan');
-        $this->load->view('Admin/head');
-        $this->load->view('Admin/makanan');
-        $this->load->view('Admin/footer');
+        $this->MakananModel->input_makanan();
+        redirect('Admin/makanan');
     }
     public function ubah_makanan($id_makanan){
-        $cek = $this->MakananModel->edit_makanan($id_makanan, $data);
-        if ($cek) $this->session->set_flashdata('info', 'Makanan berhasil diedit');
-        else $this->session->set_flashdata('info', 'Makanan gagal diedit');
-        $this->load->view('Admin/head');
-        $this->load->view('Admin/makanan');
-        $this->load->view('Admin/footer');
+        $this->MakananModel->edit_makanan($id_makanan);
+        redirect('Admin/makanan');
     }
     public function hapus_makanan($id_makanan){
-        $cek = $this->MakananModel->delete_makanan($id_makanan);
-        if ($cek) $this->session->set_flashdata('info', 'Makanan berhasil dihapus');
-        else $this->session->set_flashdata('info', 'Makanan gagal dihapus');
-        $this->load->view('Admin/head');
-        $this->load->view('Admin/makanan');
-        $this->load->view('Admin/footer');
+       $this->MakananModel->delete_makanan($id_makanan);
+        redirect('Admin/makanan');
     }
 
     public function editpesanan($id)

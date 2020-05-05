@@ -20,18 +20,18 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-            <a class="nav-link" href="<?= site_url('Admin/pasien/')?>">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="<?php echo base_url('Main/') ?>">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<?= site_url('Main/pesanMakanan/')?>">Pesan Makanan</a>
+            <a class="nav-link" href="<?php echo base_url('Main/pesanMakanan') ?>">Pesan Makanan</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="<?= site_url('Main/lihatMakanan/')?>">List Makanan</a>
+            <a class="nav-link" href="<?php echo base_url('Main/lihatMakanan') ?>">List Makanan</a>
         </li>
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item">
-            <a href="" class="nav-link">Logout</a>
+            <a href="<?php echo base_url('Login/logout') ?>" class="nav-link">Logout</a>
             </li>
         </ul>
     </div>

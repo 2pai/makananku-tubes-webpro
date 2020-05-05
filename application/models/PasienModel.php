@@ -1,28 +1,28 @@
 <?php 
 class PasienModel extends CI_Model{
 
-	public function __construct()
-	{
-		$this->load->database();
-	}
+    public function __construct()
+    {
+        $this->load->database();
+    }
 
-	public function getAllPasien()
-	{
-		$query = $this->db->get('pasien');  
+    public function getAllPasien()
+    {
+        $query = $this->db->get('pasien');  
         return $query->result_array();  
-	}
+    }
 
-	public function getDataPasien($id){
-	    return $this->db->get_where('pasien', ['nomor_pasien' => $id])->row_array();
-	}
+    public function getDataPasien($id){
+        return $this->db->get_where('pasien', ['nomor_pasien' => $id])->row_array();
+    }
 
     public function cekNamaPasien($namaPasien){
 
-		$this->db->where('nama_pasien', $namaPasien);
-  		$check =  $this->db->count_all_results('pasien'); 
+        $this->db->where('nama_pasien', $namaPasien);
+        $check =  $this->db->count_all_results('pasien'); 
 
-		if($check > 0) return true;	
-		else return false;
+        if($check > 0) return true; 
+        else return false;
     }
 
     public function registPasien(){
@@ -54,17 +54,17 @@ class PasienModel extends CI_Model{
         ];
 
         try{
-			$this->db->where('nomor_pasien', $this->input->post('nomor_pasien'))->update('pasien', $data);
-			return [
+            $this->db->where('nomor_pasien', $this->input->post('nomor_pasien'))->update('pasien', $data);
+            return [
                 'success' => true,
                 'message' => "Pasien Successfully Updated."
             ];
-		}catch(Exception $err){
-			return [
-				'success' => false,
-				'message' => 'Pasien Update Failed : ' . $err
-			];
-		}
+        }catch(Exception $err){
+            return [
+                'success' => false,
+                'message' => 'Pasien Update Failed : ' . $err
+            ];
+        }
     }
 
     public function deletePasien($id){
@@ -76,9 +76,9 @@ class PasienModel extends CI_Model{
             ];
         } catch (Exception $err) {
             return [
-				'success' => false,
-				'message' => 'Pasien Delete Failed : ' . $err
-			];
+                'success' => false,
+                'message' => 'Pasien Delete Failed : ' . $err
+            ];
         }
     }
 }
