@@ -23,8 +23,8 @@
             <td><?= $mkn['ketersediaan']; ?></td>
             <td><?= $mkn['komposisi']; ?></td>
             <td>
-                <button class="btn btn-warning btn-edit" data-toggle="modal" data-target="#modalUpdate">Edit</button>
-                <button class="btn btn-danger btn-delete" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                <button class="btn btn-warning" data-toggle="modal" data-target="#modalUpdate">Edit</button>
+                <a href= "<?= base_url('Admin/hapus_makanan/').$mkn['id_makanan'] ?>" class="btn btn-danger" onclick="return confirm('Apakah anda yakin menghapus data ini?');" ?> Delete </a>
             </td>
         </tr>
         <?php endforeach ?>
@@ -93,30 +93,30 @@
         </button>
       </div>
       <div class="modal-body">
-      <form action="<?= site_url('Admin/ubah_makanan/').$mkn['id_makanan']?>" method="post">
+      <form action="<?= base_url('Admin/ubah_makanan/').$mkn['id_makanan']?>" method="post">
         <div class="form-group">
             <label>Nama Makanan</label>
-            <input type="text" name="nama_makanan" class="form-control" value="<?php echo $mkn['nama_makanan']; ?>">
+            <input type="text" name="nama_makananu" class="form-control" value="<?php $mkn['nama_makanan']; ?>">
         </div>
         <div class="form-group">
             <label>Nilai gizi</label>
-            <input type="text" name="nilai_gizi" class="form-control" value="<?php echo $mkn['nilai_gizi']; ?>">
+            <input type="text" name="nilai_giziu" class="form-control" value="<?php $mkn['nilai_gizi']; ?>">
         </div>
         <div class="form-group">
             <label>Komposisi</label>
-            <input type="text" name="komposisi" class="form-control" value="<?php echo $mkn['komposisi']; ?>">
+            <input type="text" name="komposisiu" class="form-control" value="<?php $mkn['komposisi']; ?>">
         </div>
         <div class="form-group">
             <label for="formGroupExampleInput2">Deksripsi</label>
-            <textarea name="deskripsi" class="form-control" value="<?php echo $mkn['deskripsi']; ?>"></textarea>            
+            <textarea name="deskripsiu" class="form-control" value="<?php $mkn['deskripsi']; ?>"></textarea>            
         </div>
         <div class="form-group">
             <label>Ketersediaan</label>
-            <input type="number" name="ketersediaan" class="form-control" value="<?php echo $mkn['ketersediaan']; ?>">
+            <input type="number" name="ketersediaanu" class="form-control" value="<?php $mkn['ketersediaan']; ?>">
         </div>
         <div class="form-group">
             <label>Foto</label>
-            <input type="file" name="foto" class="form-control" value="<?php echo $mkn['foto']; ?>">
+            <input type="file" name="fotou" class="form-control" value="<?php $mkn['foto']; ?>">
         </div>
 
       </div>
@@ -129,29 +129,3 @@
   </div>
 </div>
 
-<!-- Modal Delete Product-->
-
-    <form action="<?= site_url('Admin/hapus_makanan/').$mkn['id_makanan']?>" method="post">
-        <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Delete Product</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-             
-               <h4>Are you sure want to delete this product?</h4>
-             
-            </div>
-            <div class="modal-footer">
-                <input type="hidden" name="product_id" class="productID">
-                <button type="submit" class="btn btn-primary">Yes</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-            </div>
-            </div>
-        </div>
-        </div>
-    </form>
