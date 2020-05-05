@@ -11,38 +11,54 @@ class MakananModel extends CI_Model{
 	}
 	
 	public function get_makanan($id_makanan){
-		$this->db->where('id_makanan', $id_makanan);
-		return $this->db->get('makanan')->row();
+		return $this->db->get_where('makanan', ['id_makanan' => $id_makanan])->row_array();
 	}
-
 	public function input_makanan(){
 		$data = array(
-			'nama_makanan' => $this->input->post('nama_makanan'),
-			'foto' => $this->input->post('foto'),
-			'nilai_gizi' => $this->input->post('nilai_gizi'),
-			'komposisi' => $this->input->post('komposisi'),
-			'deskripsi' => $this->input->post('deskripsi'),
-			'ketersediaan' => $this->input->post('ketersediaan'),
+			'nama_makanan' 	=> $this->input->post('nama_makanan'),
+			'foto' 			=> $this->input->post('foto'),
+			'nilai_gizi' 	=> $this->input->post('nilai_gizi'),
+			'komposisi' 	=> $this->input->post('komposisi'),
+			'deskripsi' 	=> $this->input->post('deskripsi'),
+			'ketersediaan' 	=> $this->input->post('ketersediaan'),
 		);
 		$this->db->insert('makanan', $data);
 	}
-
-	public function edit_makanan($id_makanan){
+	public function edit_makanan(){
 		$data = array(
-			'nama_makanan' => $this->input->post('nama_makanan'),
-			'foto' => $this->input->post('foto'),
-			'nilai_gizi' => $this->input->post('nilai_gizi'),
-			'komposisi' => $this->input->post('komposisi'),
-			'deskripsi' => $this->input->post('deskripsi'),
-			'ketersediaan' => $this->input->post('ketersediaan'),
+			'nama_makanan' 	=> $this->input->post('nama_makananu'),
+			'foto' 			=> $this->input->post('foto'),
+			'nilai_gizi' 	=> $this->input->post('nilai_giziu'),
+			'komposisi' 	=> $this->input->post('komposisiu'),
+			'deskripsi' 	=> $this->input->post('deskripsiu'),
+			'ketersediaan' 	=> $this->input->post('ketersediaanu'),
 		);
-		$this->db->where('id_makanan', $id_makanan);
-		$this->db->update('makanan', $data);
+		try{
+            $this->db->where('id_makanan', $this->input->post('id_makananu'))->update('makanan', $data);
+            return [
+                'success' => true,
+                'message' => "Makanan Successfully Updated."
+            ];
+        }catch(Exception $err){
+            return [
+                'success' => false,
+                'message' => 'Makanan Update Failed : ' . $err
+            ];
+        }
 	}
-	
 	public function delete_makanan($id_makanan){
-		$this->db->where('id_makanan', $id_makanan);
-		return $this->db->delete('makanan');
+		try {
+            $this->db->delete('makanan',['id_makanan' => $id_makanan]);
+            return [
+                'success' => true,
+                'message' => 'Makanan Sucessfully Deleted.'
+            ];
+        } catch (Exception $err) {
+            return [
+                'success' => false,
+                'message' => 'Makanan Delete Failed : ' . $err
+            ];
+        }
 	}
 }
 ?>
