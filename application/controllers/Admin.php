@@ -69,7 +69,8 @@ class Admin extends CI_Controller {
         redirect('Admin/makanan');
     }
     public function ubah_makanan($id_makanan){
-        $this->MakananModel->edit_makanan($id_makanan);
+        $data['makanan'] = $this->MakananModel->get_makanan($id_makanan);
+        $this->MakananModel->edit_makanan();
         redirect('Admin/makanan');
     }
     public function hapus_makanan($id_makanan){
